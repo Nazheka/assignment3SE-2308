@@ -1,29 +1,43 @@
 package models;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
+import java.sql.Date;
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
+
 public class Employee extends Person {
-    private String employeeId;
     private String speciality;
     private int workExperience;
-    private String appointmentTime;
-    private double salary;
-    private int vacationDays;
+    private String workGraphic;
+    private long salary;
+    private int vacation;
 
-    public void increaseOfSalaryByWorkExperience() {
-        int yearsOfExperience = workExperience / 12;
-        int numberOfIncreases = yearsOfExperience;
-        double newSalary = salary;
-        for (int i = 0; i < numberOfIncreases; i++) {
-            newSalary += newSalary * 0.5;
-        }
-        setSalary(newSalary);
+    public Employee() {
+        super();
     }
-
+    public Employee(String UIN, String surname, String name, String patronymic, boolean gender,
+                   String birthday, String speciality, int workExperience, String workGraphic, long salary, int vacation) {
+        super(UIN, surname, name, patronymic, gender, birthday);
+        setSpeciality(speciality);
+        setWorkExperience(workExperience);
+        setWorkGraphic(workGraphic);
+        setSalary(salary);
+        setVacation(vacation);
+    }
+    @Override
+    public String toString() {
+        return "Employee{" + super.toString() + '\'' +
+                "speciality='" + speciality + '\'' +
+                ", workExperience=" + workExperience +
+                ", appointmentTime='" + workGraphic + '\'' +
+                ", salary=" + salary +
+                ", vacationDays=" + vacation +
+                '}';
+    }
 }
+
+
