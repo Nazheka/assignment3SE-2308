@@ -10,7 +10,7 @@ import java.sql.Date;
 @AllArgsConstructor
 
 public abstract class Person {
-    private String UIN;
+    private String uin;
     private String surname;
     private String name;
     private String patronymic;
@@ -19,7 +19,7 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "{UIN='" + UIN + '\'' +
+        return "{UIN='" + uin + '\'' +
                 ", surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 ", patronymic='" + patronymic + '\'' +

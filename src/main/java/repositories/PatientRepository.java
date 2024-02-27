@@ -57,7 +57,7 @@ public class PatientRepository implements IPatientRepository {
                     + "birthday, weight, height, therapist, bloodType, allergy, vaccination, "
                     + "medicalRecord, dateAttachment VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, patient.getUIN());
+            st.setString(1, patient.getUin());
             st.setString(2, patient.getSurname());
             st.setString(3, patient.getName());
             st.setString(4, patient.getPatronymic());
